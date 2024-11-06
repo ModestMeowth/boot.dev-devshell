@@ -28,7 +28,6 @@
             # Formatters
             nixpkgs-fmt
             taplo
-            black
           ];
 
           commands = with pkgs; [

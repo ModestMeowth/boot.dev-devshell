@@ -11,7 +11,3 @@ includes = ["*.nix"]
 command = "taplo"
 includes = ["*.toml"]
 options = ["format"]
-
-[formatter.black]
-command = "black"
-includes = ["*.py", "*.pyi"]
