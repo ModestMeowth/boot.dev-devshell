@@ -25,20 +25,10 @@
 
         devshells.default = {
           devshell.packages = with pkgs; [
-            (unstable.python3.withPackages (p: [
-              p.pygame
-            ]))
             # Formatters
             nixpkgs-fmt
             taplo
             black
-          ];
-
-          env = [
-            {
-              name = "PYGAME_DETECT_AVX2";
-              value = "1";
-            }
           ];
 
           commands = with pkgs; [
