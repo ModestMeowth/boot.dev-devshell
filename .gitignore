@@ -1,0 +1,7 @@
+/*
+!.envrc
+!.editorconfig
+!.gitignore
+!flake.nix
+!flake.lock
+!treefmt.toml
