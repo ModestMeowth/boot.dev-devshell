@@ -2,8 +2,8 @@
   inputs.nixpkgs.url = "nixpkgs";
   inputs.unstable.url = "unstable";
 
-  inputs.shell.url = "github:numtide/devshell";
-  inputs.parts.url = "github:hercules-ci/flake-parts";
+  inputs.shell.url = "devshell";
+  inputs.parts.url = "flake-parts";
 
   outputs = inputs @ { ... }:
     inputs.parts.lib.mkFlake { inherit inputs; } {
