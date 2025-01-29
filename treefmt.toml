@@ -1,4 +1,5 @@
 # https://github.com/numtide/treefmt
+
 [global]
 excludes = ["*.sops.*"]
 
@@ -20,3 +21,7 @@ command = "gofmt"
 excludes = ["vendor/*"]
 includes = ["*.go"]
 options = ["-w"]
+
+[formatter.yamlfmt]
+command = "yamlfmt"
+includes = ["*.yaml", "*.yml"]

@@ -44,9 +44,11 @@
                   owner = "bootdotdev";
                   repo = "bootdev";
                   rev = "v${version}";
+                  # Hash for source files
                   sha256 = "sha256-e6LUAcG0tCTfRWGkJ85jIfjcr4/1fIP61rPPUTDrkjg=";
                 };
 
+                # Hash post-build
                 vendorHash = "sha256-jhRoPXgfntDauInD+F7koCaJlX4XDj+jQSe/uEEYIMM=";
 
                 meta.description = "The official command line tool for Boot.dev. It allows you to submit lessons and do other such nonsense.";
@@ -55,12 +57,16 @@
           ];
 
           devshell.packages = with pkgs; [
-            nixpkgs-fmt
-            mdformat
-            black
-            taplo
+            # Formatting tools
+            nixpkgs-fmt # Nix
+            mdformat    # Markdown
+            black       # Python
+            taplo       # TOML
+            yamlfmt     # YAML
+
+            # Python packages
             (python3.withPackages (p: with p; [
-              pygame
+              pygame # 6. Build Asteroids
             ]))
           ];
         };
