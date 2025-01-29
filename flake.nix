@@ -20,12 +20,14 @@
           imports = [
             "${inputs.shell}/extra/language/c.nix"
             "${inputs.shell}/extra/language/go.nix"
-            "${inputs.shell}/extra/language/rust.nix"
+#            Boot.dev does not currently have rust content
+#            "${inputs.shell}/extra/language/rust.nix"
           ];
 
           language = {
             c.compiler = pkgs.clang;
-            rust.packageSet = pkgs.rustPackages;
+#            Boot.dev does not currently have rust content
+#            rust.packageSet = pkgs.rustPackages;
           };
 
           commands = with pkgs; [
