@@ -6,3 +6,4 @@
 !flake.lock
 !devshell.toml
 !treefmt.toml
+!README.md
