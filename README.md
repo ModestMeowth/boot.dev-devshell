@@ -2,7 +2,7 @@
 
 ## Requirments
 - [nix](https://nixos.org/download/) (Standalone package manager or NixOS)
-- [direnv](https://direnv.net/)
+- [direnv](https://direnv.net/docs/installation.html)
 
 ## Includes
 - [bootdev](https://github.com/bootdotdev/bootdev) cli tool build via source (Not in nixpkgs as of 2025-1-28)
