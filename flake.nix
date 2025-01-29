@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     parts.url = "flake-parts";
-    shell.url = "devshell";
+    shell.url = "github:numtide/devshell";
+    shell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { ... }:
