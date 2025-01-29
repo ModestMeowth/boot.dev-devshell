@@ -1,5 +1,4 @@
 # https://github.com/numtide/treefmt
-
 [global]
 excludes = ["*.sops.*"]
 
@@ -11,3 +10,13 @@ includes = ["*.nix"]
 command = "taplo"
 includes = ["*.toml"]
 options = ["format"]
+
+[formatter.black]
+command = "black"
+includes = ["*.py", "*.pyi"]
+
+[formatter.gofmt]
+command = "gofmt"
+excludes = ["vendor/*"]
+includes = ["*.go"]
+options = ["-w"]
