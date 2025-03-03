@@ -3,6 +3,10 @@
 [global]
 excludes = ["*.sops.*"]
 
+[formatter.mdformat]
+command = "mdformat"
+includes = ["*.md"]
+
 [formatter.nixpkgs-fmt]
 command = "nixpkgs-fmt"
 includes = ["*.nix"]
