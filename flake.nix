@@ -25,6 +25,13 @@
 #            "${inputs.shell}/extra/language/rust.nix"
           ];
 
+          env = [
+            {
+              name = "GOPATH";
+              eval = "$PWD/go";
+            }
+          ];
+
           language = {
             c.compiler = pkgs.clang;
 #            Boot.dev does not currently have rust content
