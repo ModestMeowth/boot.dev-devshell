@@ -62,6 +62,12 @@
                 meta.description = "The official command line tool for Boot.dev. It allows you to submit lessons and do other such nonsense.";
               };
             }
+            {
+              package = "curl";
+            }
+            {
+              package = "jq";
+            }
           ];
 
           devshell.packages = with pkgs; [
