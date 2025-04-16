@@ -21,6 +21,7 @@
           imports = [
             "${inputs.shell}/extra/language/c.nix"
             "${inputs.shell}/extra/language/go.nix"
+            "${inputs.shell}/extra/services/postgres.nix"
 #            Boot.dev does not currently have rust content
 #            "${inputs.shell}/extra/language/rust.nix"
           ];
@@ -36,6 +37,9 @@
             c.compiler = pkgs.clang;
 #            Boot.dev does not currently have rust content
 #            rust.packageSet = pkgs.rustPackages;
+          };
+
+          services.postgres = {
           };
 
           commands = with pkgs; [
