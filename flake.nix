@@ -31,10 +31,18 @@
               name = "GOPATH";
               eval = "$PWD/go";
             }
+            {
+              name = "GOOSE_DRIVER";
+              eval = "postgres";
+            }
+            {
+              name = "GOOSE_DBSTRING";
+              eval = "postgres://$USER@:/chirpy";
+            }
           ];
 
           language = {
-            c.compiler = pkgs.clang;
+            c.compiler = pkgs.gcc;
 #            Boot.dev does not currently have rust content
 #            rust.packageSet = pkgs.rustPackages;
           };
@@ -45,19 +53,20 @@
           commands = with pkgs; [
             {
               package = "treefmt";
+              category = "formatting";
             }
             {
               package = pkgs.callPackage buildGoModule rec {
                 name = "bootdev";
                 pname = name;
-                version = "1.18.0";
+                version = "1.19.0";
 
                 src = fetchFromGitHub {
                   owner = "bootdotdev";
                   repo = "bootdev";
                   rev = "v${version}";
                   # Hash for source files
-                  sha256 = "sha256-jbCnfF0arJ6R6Os6PnnTXqhjLGmD41pz0ZhNR6isjJA=";
+                  sha256 = "sha256-5S4XjqajX1Y9XKxfWFDeFVC2d14/C9fo6zytbwXuW7E=";
                 };
 
                 # Hash post-build
@@ -68,9 +77,19 @@
             }
             {
               package = "curl";
+              category = "testing";
             }
             {
               package = "jq";
+              category = "testing";
+            }
+            {
+              package = "goose";
+              category = "databases";
+            }
+            {
+              package = "sqlc";
+              category = "databases";
             }
           ];
 
@@ -86,6 +105,11 @@
             (python3.withPackages (p: with p; [
               pygame # 6. Build Asteroids
             ]))
+
+            # GoLang CGO
+            libpcap
+
+            sqlite
           ];
         };
       };
