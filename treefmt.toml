@@ -20,6 +20,11 @@ options = ["format"]
 command = "black"
 includes = ["*.py", "*.pyi"]
 
+[formatter.sqlfluff]
+command = "sqlfluff"
+includes = ["*.sql"]
+options = ["format", "--disable-progress-bar", "--processes", "0"]
+
 [formatter.gofmt]
 command = "gofmt"
 excludes = ["vendor/*"]

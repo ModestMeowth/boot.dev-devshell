@@ -22,8 +22,8 @@
             "${inputs.shell}/extra/language/c.nix"
             "${inputs.shell}/extra/language/go.nix"
             "${inputs.shell}/extra/services/postgres.nix"
-#            Boot.dev does not currently have rust content
-#            "${inputs.shell}/extra/language/rust.nix"
+            #            Boot.dev does not currently have rust content
+            #            "${inputs.shell}/extra/language/rust.nix"
           ];
 
           env = [
@@ -43,12 +43,11 @@
 
           language = {
             c.compiler = pkgs.gcc;
-#            Boot.dev does not currently have rust content
-#            rust.packageSet = pkgs.rustPackages;
+            #            Boot.dev does not currently have rust content
+            #            rust.packageSet = pkgs.rustPackages;
           };
 
-          services.postgres = {
-          };
+          services.postgres = { };
 
           commands = with pkgs; [
             {
@@ -96,10 +95,11 @@
           devshell.packages = with pkgs; [
             # Formatting tools
             nixpkgs-fmt # Nix
-            mdformat    # Markdown
-            black       # Python
-            taplo       # TOML
-            yamlfmt     # YAML
+            mdformat # Markdown
+            black # Python
+            sqlfluff # SQL
+            taplo # TOML
+            yamlfmt # YAML
 
             # Python packages
             (python3.withPackages (p: with p; [
