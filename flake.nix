@@ -58,14 +58,14 @@
               package = pkgs.callPackage buildGoModule rec {
                 name = "bootdev";
                 pname = name;
-                version = "1.19.0";
+                version = "1.19.1";
 
                 src = fetchFromGitHub {
                   owner = "bootdotdev";
                   repo = "bootdev";
                   rev = "v${version}";
                   # Hash for source files
-                  sha256 = "sha256-5S4XjqajX1Y9XKxfWFDeFVC2d14/C9fo6zytbwXuW7E=";
+                  sha256 = "sha256-cAVCTA4SZdD3QVgbSbha860fExq1swWnJjpWKpfHP2Q=";
                 };
 
                 # Hash post-build
