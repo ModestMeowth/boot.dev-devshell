@@ -51,7 +51,7 @@
 
           commands = with pkgs; [
             {
-              package = "treefmt";
+              package = treefmt;
               category = "formatting";
             }
             {
@@ -75,19 +75,19 @@
               };
             }
             {
-              package = "curl";
+              package = curl;
               category = "testing";
             }
             {
-              package = "jq";
+              package = jq;
               category = "testing";
             }
             {
-              package = "goose";
+              package = goose;
               category = "databases";
             }
             {
-              package = "sqlc";
+              package = sqlc;
               category = "databases";
             }
           ];
