@@ -39,6 +39,10 @@
               name = "GOOSE_DBSTRING";
               eval = "postgres://$USER@:/chirpy";
             }
+            {
+              name = "DOCKER_HOST";
+              eval = "unix://$XDG_RUNTIME_DIR/docker.sock";
+            }
           ];
 
           language = {
@@ -48,6 +52,9 @@
           };
 
           services.postgres = { };
+          serviceGroups.docker.services = {
+            docker.command = "dockerd-rootless";
+          };
 
           commands = with pkgs; [
             {
@@ -90,6 +97,14 @@
               package = sqlc;
               category = "databases";
             }
+            {
+              package = minikube;
+              category = "kubernetes";
+            }
+            {
+              package = kubectl;
+              category = "kubernetes";
+            }
           ];
 
           devshell.packages = with pkgs; [
@@ -109,7 +124,10 @@
             # GoLang CGO
             libpcap
 
+            typescript
+
             sqlite
+            docker
           ];
         };
       };
