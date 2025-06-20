@@ -65,14 +65,14 @@
               package = pkgs.callPackage buildGoModule rec {
                 name = "bootdev";
                 pname = name;
-                version = "1.19.1";
+                version = "1.19.2";
 
                 src = fetchFromGitHub {
                   owner = "bootdotdev";
                   repo = "bootdev";
                   rev = "v${version}";
                   # Hash for source files
-                  sha256 = "sha256-cAVCTA4SZdD3QVgbSbha860fExq1swWnJjpWKpfHP2Q=";
+                  sha256 = "sha256-jTI91t/gcEdOc3mwP0dFqL5sYeaC6nD96+RpuQfAf4s=";
                 };
 
                 # Hash post-build
@@ -124,6 +124,7 @@
             # GoLang CGO
             libpcap
 
+            nodejs
             typescript
 
             sqlite
