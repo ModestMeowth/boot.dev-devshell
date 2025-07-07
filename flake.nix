@@ -62,24 +62,7 @@
               category = "formatting";
             }
             {
-              package = pkgs.callPackage buildGoModule rec {
-                name = "bootdev";
-                pname = name;
-                version = "1.19.2";
-
-                src = fetchFromGitHub {
-                  owner = "bootdotdev";
-                  repo = "bootdev";
-                  rev = "v${version}";
-                  # Hash for source files
-                  sha256 = "sha256-jTI91t/gcEdOc3mwP0dFqL5sYeaC6nD96+RpuQfAf4s=";
-                };
-
-                # Hash post-build
-                vendorHash = "sha256-jhRoPXgfntDauInD+F7koCaJlX4XDj+jQSe/uEEYIMM=";
-
-                meta.description = "The official command line tool for Boot.dev. It allows you to submit lessons and do other such nonsense.";
-              };
+              package = pkgs.bootdev-cli;
             }
             {
               package = curl;
